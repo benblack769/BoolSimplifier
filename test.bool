@@ -1,0 +1,22 @@
+val oneLook = (lookahead and one)
+val tokenize = state_mach and not slow and (simple or not oneLook)
+val pars = tokenze and oneLook
+val evalu = pars and (interpreter and not slow)
+print_value evalu
+print_tree evalu
+print_table evalu
+val simp = simplify evalu
+print_value simp
+print_tree simp
+
+val z = if if b if g then c then if d then (e and g)
+print_tree z
+print_table z
+val simp_z = simplify z
+print_table simp_z
+print_value simp_z
+val h = a or not b
+val i = c or not d
+val g = simplify (h and not i) or (not h and i)
+print_tree g
+print_value g
